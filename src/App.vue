@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import foot from "./components/tabbar/foot";
+import foot from "./components/common/tabbar/foot";
 export default {
   name: "app",
   components: {
@@ -15,4 +15,6 @@ export default {
 </script>
 
 <style scoped>
+/* 初始化页面样式 */
+@import './assets/css/base.css';
 </style>

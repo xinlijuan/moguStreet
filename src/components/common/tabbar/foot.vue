@@ -44,7 +44,5 @@ export default {
 </script>
 
 <style>
-span {
-  font-size: 28px;
-}
+
 </style>

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
-import Find from '../views/Find'
-import Sort from '../views/Sort'
-import About from '../views/About'
-import Mine from '../views/Mine'
+import Home from '../views/home/Home'
+import Find from '../views/shoppingCart/Find'
+import Sort from '../views/category/Sort'
+import About from '../views/shoppingCart/About'
+import Mine from '../views/profile/Mine'
 
 
 Vue.use(VueRouter)
