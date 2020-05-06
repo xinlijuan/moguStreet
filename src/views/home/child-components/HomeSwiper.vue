@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 import {Swiper,SwiperItem} from '../../../components/common/swiper/index'
 export default {
   name: "homeswiper",

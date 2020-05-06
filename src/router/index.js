@@ -5,6 +5,7 @@ import Find from '../views/shoppingCart/Find'
 import Sort from '../views/category/Sort'
 import About from '../views/shoppingCart/About'
 import Mine from '../views/profile/Mine'
+import Detail from '../views/detail/Detail'
 
 
 Vue.use(VueRouter)
@@ -38,6 +39,12 @@ const routes = [
     path: '/Mine',
     name: 'Mine',
     component: Mine
+  },
+  {
+    path: '/Detail/:id',
+    //动态路由
+    name: 'Detail', 
+    component: Detail
   }
 ]
 

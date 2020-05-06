@@ -1,6 +1,9 @@
 <template>
   <div id="app">
+    <!-- 保持原来静态页面 -->
+    <keep-alive exclude="detail">
     <router-view></router-view>
+    </keep-alive>
     <foot></foot>
   </div>
 </template>

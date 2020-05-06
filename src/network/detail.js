@@ -1,0 +1,26 @@
+import {request} from './request'
+
+export function getDetailData(iid){
+  return request({
+    url:'/data/detail/'+iid+".json"  })
+}
+
+// 导出对象
+export class GoodsInfo{
+  constructor(columns,itemInfo,shopInfo){
+      this.title=itemInfo.title
+      this.newPrice=itemInfo.price
+      this.oldPrice=itemInfo.oldPrice
+      this.discount=itemInfo.discountDesc
+      this.columns=columns
+      this.services=shopInfo.services
+  }
+}
+
+export class GoodsParams{
+  constructor(info,rule){
+    this.img=info.images?info.images[0]:''
+    this.info=info.set
+    this.size=rule.tables
+  }
+}

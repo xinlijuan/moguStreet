@@ -17,7 +17,8 @@ export default {
   name: "TabControl",
   data() {
     return {
-      currentIndex: {}
+      // 当前的index
+      currentIndex:0
     };
   },
   props: {
@@ -31,6 +32,7 @@ export default {
   methods: {
     activeClick(index) {
       this.currentIndex = index;
+      this.$emit('tabclick',index)
     }
   }
 };

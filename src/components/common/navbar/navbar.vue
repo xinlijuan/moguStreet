@@ -18,7 +18,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
 .navbar {
   width: 100%;
   display: flex;
@@ -29,7 +30,7 @@ export default {
   /* 粘性定位 */
   top:0;
   left:0;
-  box-shadow: 0 -10px salmon;
+  box-shadow: 0 -10px rgb(238, 33, 67);
   z-index: 100;
 }
 /* 并集选择器 */
