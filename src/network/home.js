@@ -12,3 +12,4 @@ export function getHomegoods(type,page){
     url:'/data/home/data/'+type+"/"+page+'.json'
   })
 }
+

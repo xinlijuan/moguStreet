@@ -22,8 +22,10 @@
         <table>
           <tr v-for="(item,index) in shop.score" :key="index">
             <td>{{item.name}}</td>
-            <td>{{item.score}}</td>
-            <td>{{item.isBetter?"高":"低"}}</td>
+            <td  :class="item.score<5?'redColor':'greenColor'">{{item.score}}</td>
+            <!-- <td>{{item.isBetter?"高":"低"}}</td> -->
+            <td :class="item.isBetter==='高'?'redColor':'greenColor'">{{item.isBetter?"高":"低"}}</td>
+             <!-- <td :style="{'color':(item.isBetter==='高' ?'redColor':'greenColor')}">{{item.isBetter?"高":"低"}}</td> -->
           </tr>
         </table>
       </div>
@@ -110,5 +112,11 @@ export default {
 tr td{
   padding-bottom: 5px;
   padding-right: 5px;
+}
+.redColor{
+  color: red;
+}
+.greenColor{
+  color: green;
 }
 </style>

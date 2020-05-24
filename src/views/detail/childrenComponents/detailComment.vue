@@ -5,11 +5,9 @@
       <div class="top-more">更多 &gt;</div>
     </div>
     <div class='clear'></div>
-    <div class="info-user">
-      <!-- <img :src="commentInfo.user.avatar" alt />
-      <span>{{commentInfo.user.uname}}</span> -->
-      <img :src="userLogo" alt="">
-      <span>{{uname}}</span>
+    <div class="info-user" v-if="Object.keys(commentInfo).length !== 0">
+       <img :src="commentInfo.user.avatar" alt="">
+      <span>{{commentInfo.user.uname}}</span>
     </div>
     <div class="info-detail">
       <p>{{commentInfo.content}}</p>
@@ -40,12 +38,6 @@ export default {
     showData(value) {
       return dateFormat(new Date(value * 1000), "yyyy-MM-dd");
     }
-  },
-  watch:{
-    commentInfo(){
-      this.userLogo=this.commentInfo.user.avatar
-      this.uname=this.commentInfo.user.uname
-    }
   }
 };
 </script>
@@ -67,9 +59,6 @@ export default {
 .clear{
   clear: both;
 }
-.info-user{
-  margin: 5px;
-}
 .info-user img{
   width: 60px;
   height: 60px;
@@ -82,5 +71,11 @@ export default {
 }
 .info-other span:first-child{
   padding: 0  15px 0 0;
+}
+.info-img{
+  width: 100%;
+}
+.info-img img{
+  width: 100%;
 }
 </style>

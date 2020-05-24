@@ -3,7 +3,7 @@
     <navbar class="navbar">
       <div slot="center">蘑菇街</div>
     </navbar>
-    <TabControl :titles="['流行','新款','精选']" class="TabControl" @tabclick="tabClick" v-show="isTabfixed" ref='tabFixed'></TabControl>
+    <TabControl :titles="['流行','新款','精选']"  @tabclick="tabClick" v-show="isTabfixed" ref='tabFixed'></TabControl>
     <BetterScroll
       class="better-scroll"
       :click="true"
@@ -18,7 +18,7 @@
       <HomePop></HomePop>
       <TabControl :titles="['流行','新款','精选']" class="TabControl" @tabclick="tabClick" v-show='!isTabfixed' ref='tabControl'></TabControl>
       <goodsList :goods="goods[currentType].list"></goodsList>
-    </BetterScroll>c
+    </BetterScroll>
     <BackTop v-show="isShowTop" @click.native="backTop"></BackTop>
   </div>
 </template>
@@ -29,7 +29,8 @@ import navbar from "../../components/common/navbar/navbar";
 import TabControl from "../../components/content/tabControl/TabControl";
 import goodsList from "../../components/content/goods/goodsList";
 import BetterScroll from "../../components/common/betterScroll/BetterScroll";
-import BackTop from "../../components/content/backTop/BackTop";
+// import BackTop from "../../components/content/backTop/BackTop";
+import { backTopMixin} from '../../comment/mixin'
 // 获取内容
 
 // Home的子组件
@@ -62,8 +63,9 @@ export default {
     TabControl,
     goodsList,
     BetterScroll,
-    BackTop
+    // BackTop
   },
+  mixins:[backTopMixin],
   created() {
     this.getHomeMultiData();
     this.getHomeGoods("pop");
@@ -86,7 +88,7 @@ export default {
           // console.log(res);
           this.goods[type].list.push(...res.data.list);
           this.goods[type].page += 1;
-          this.$refs.scroll.finishPullup();
+          // this.$refs.scroll.finishPullup();
         })
         .catch(err => {
           this.$refs.scroll.finishPullup();
@@ -109,12 +111,13 @@ export default {
       this.$refs.tabControl.currentType=index
     },
     homeScroll(position) {
-      this.isShowTop = position.y < -800;
-      this.isTabfixed=position.y<-603
+      // this.isShowTop = position.y < -800;
+      this.isTabfixed=position.y<-603,
+      this.getBackTopShow(position)
     },
-    backTop() {
-      this.$refs.scroll.bs.scrollTo(0, 0, 2000);
-    },
+    // backTop() {
+    //   this.$refs.scroll.bs.scrollTo(0, 0, 2000);
+    // },
     loadMore() {
       this.getHomeGoods(this.currentType);
     }
@@ -130,11 +133,6 @@ export default {
 .home .navbar {
   background: salmon;
   color: white;
-}
-.TabControl {
-  position: sticky;
-  top: 43px;
-  z-index: 100;
 }
 .better-scroll {
   height: calc(100% - 94px);

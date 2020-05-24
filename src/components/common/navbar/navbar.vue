@@ -26,12 +26,13 @@ export default {
   line-height: 44px;
   height: 44px;
   position:sticky;
-  position: -webkit-sticky;
   /* 粘性定位 */
   top:0;
   left:0;
   box-shadow: 0 -10px rgb(238, 33, 67);
-  z-index: 100;
+  z-index: 100; 
+  background: #ff69b4;
+  color: white;
 }
 /* 并集选择器 */
 .navbar .left,

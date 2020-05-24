@@ -20,7 +20,7 @@
         <!-- activeColor='brown' -->
         <span class="iconfont icon-guanyu-copy" slot="item-icon"></span>
         <span class="iconfont icon-guanyu1-copy" slot="item-icon-active"></span>
-        <div slot="item-text">关于</div>
+        <div slot="item-text">购物车</div>
       </tabbarItem>
       <tabbarItem path="/Mine">
         <span class="iconfont icon-faxian-copy" slot="item-icon"></span>

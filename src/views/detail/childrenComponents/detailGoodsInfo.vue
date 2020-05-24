@@ -1,8 +1,9 @@
 <template>
   <div v-if="Object.keys(detailInfo).length!==0" class="goods-info">
     <div class="start"></div>
-    <div class="desc">
       <div class='info-desc'>{{detailInfo.desc}}</div>
+      <div class="end"></div>
+      <div class="desc">
       <div class="info-key">{{detailInfo.detailImage[0].key}}</div>
       <div class="info-list">
         <img
@@ -14,7 +15,6 @@
         />
       </div>
     </div>
-    <div class="end"></div>
   </div>
 </template>
 
@@ -56,16 +56,18 @@ export default {
 .desc{
   padding: 15px 5px;
 }
+.start , .end{
+ border: 1px solid #000;  
+ width: 25%;
+}
 .start{
- /* border: 1px seagreen solid; */
- width: 100px;
+  float: left;
 }
 .end{
-   /* border: 1px seagreen solid; */
- width: 100px;
- padding: 15px 5px;
+  float: right;
 }
 .info-desc{
   font-size: 16px;
+  padding: 15px ;
 }
 </style>

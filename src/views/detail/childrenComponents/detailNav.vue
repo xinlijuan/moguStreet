@@ -29,6 +29,7 @@ export default {
   methods:{
     itemClick(index){
       this.currentIndex=index
+      this.$emit('titleClick',index)
     },
     backHome(){
       this.$router.back()
@@ -38,7 +39,6 @@ export default {
 </script>
 
 <style  scoped>
-
 img {
   position: relative;
   top: 3px;
